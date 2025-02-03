@@ -8,7 +8,7 @@ import qualified Data.ByteString.Lazy.UTF8 as LBS
 import           Data.Char
 import           Data.List
 import           Data.List.Split
-import           System.IO
+import           System.Directory
 
 main :: IO ()
 main = do
@@ -19,3 +19,7 @@ main = do
   putStrLn $ "Name: " <> n
   putStrLn $ "Date: " <> d
   writeFile "output.csv" (n <> "," <> d)
+  dirs <- listDirectory "."
+  files <- findFiles dirs "file1"
+  mapM_ putStrLn files
+  pure ()

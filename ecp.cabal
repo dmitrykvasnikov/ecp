@@ -73,6 +73,7 @@ executable ecp
                     , bytestring
                     , utf8-string
                     , split
+                    , directory
 
     -- Directories containing source files.
     hs-source-dirs:   app
